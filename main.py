@@ -62,3 +62,20 @@ async def eliminar_personaje(personaje_id: str):
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="ID inválido"
         )
+
+@app.get("/personajes/recompensa/top", response_model=List[PersonajeResponse], tags=["Búsquedas"])
+async def top_recompensas(limit: int = 5):
+    """Obtiene los personajes con mayor recompensa"""
+    personajes = []
+    for personaje in personajes_collection.find().sort("recompensa", -1).limit(limit):
+        personajes.append(personaje_helper(personaje))
+    return personajes
+
+@app.get("/personajes/fruta-diablo", response_model=List[PersonajeResponse], tags=["Búsquedas"])
+async def con_fruta_diablo():
+    """Obtiene personajes que tienen fruta del diablo"""
+    personajes = []
+    for personaje in personajes_collection.find({"fruta_diablo": {"$ne": None}}):
+        personajes.append(personaje_helper(personaje))
+    return personajes
+
