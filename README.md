@@ -119,13 +119,18 @@ curl -X GET "http://127.0.0.1:8000/personajes/tripulacion/Sombrero"
 ## 📸 Capturas de Pantalla
 
 ### Interfaz Swagger
-*[Aquí se incluyen las capturas de Swagger UI mostrando los endpoints]*
+
+<img width="1895" height="951" alt="Captura de pantalla 2025-10-19 170438" src="https://github.com/user-attachments/assets/43e2676b-ffcf-450b-829c-2352490c375f" />
 
 ### Operaciones CRUD
-*[Capturas de las operaciones de alta, listado y baja]*
+
+<img width="1292" height="949" alt="Captura de pantalla 2025-10-19 170557" src="https://github.com/user-attachments/assets/85d9bd86-d693-4ec5-b4fb-abecfcc18e04" />
+<img width="1276" height="949" alt="Captura de pantalla 2025-10-19 170717" src="https://github.com/user-attachments/assets/bd1c337b-d870-4f47-a410-396d8265189a" />
+<img width="1276" height="927" alt="Captura de pantalla 2025-10-19 170908" src="https://github.com/user-attachments/assets/9ce1786a-edbc-426c-96ec-9b5c23b9586a" />
 
 ### Base de Datos MongoDB
-*[Capturas de MongoDB Compass mostrando los documentos]*
+<img width="1657" height="882" alt="Captura de pantalla 2025-10-19 171140" src="https://github.com/user-attachments/assets/1955fed2-9339-4da3-b19e-2372f44e2286" />
+
 
 ## 📁 Estructura del Proyecto
 
