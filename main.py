@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware #para comunicar con api
 from models import Personaje, PersonajeResponse
 from database import personajes_collection
 from bson import ObjectId
@@ -10,6 +11,15 @@ app = FastAPI(
 	version="1.0.0"
 )
 
+app.add_middleware(
+	CORSMiddleware,
+	allow_origins=["*"],
+	allow_credentials=True,
+	allow_methods=["*"],
+	allow_headers=["*"],
+)
+
+
 def personaje_helper(personaje)-> dict:
 	"""Convierte un documento de MongoDB a diccionario"""
 	return {
@@ -18,7 +28,8 @@ def personaje_helper(personaje)-> dict:
 		"recompensa": personaje["recompensa"],
 		"fruta_diablo": personaje.get("fruta_diablo"),
 		"tripulacion": personaje["tripulacion"],
-		"rol":personaje["rol"]
+		"rol":personaje["rol"],
+		"img":personaje.get("img"),
 	}
 
 @app.get("/", tags=["Root"])
